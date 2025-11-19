@@ -1,0 +1,256 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f7f0;
+  color: #2d4a2d;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #2d5a2d 0%, #3a7a3a 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid #4a8a4a;
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background-color: #4a8a4a;
+  transform: translateX(5px);
+}
+
+.sidebar-footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-top: 1px solid #4a8a4a;
+  margin-top: 20px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-content h1 {
+  color: #2d5a2d;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Eco Cards */
+.eco-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.1);
+  border-left: 4px solid #4caf50;
+}
+
+.eco-card h2 {
+  color: #2d5a2d;
+  margin-bottom: 15px;
+}
+
+.eco-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.eco-card li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.eco-card li:before {
+  content: '🌿';
+  position: absolute;
+  left: 0;
+}
+
+/* Chat Styles */
+.chat-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.1);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.message {
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 20px;
+  max-width: 70%;
+}
+
+.message.user {
+  background: #4caf50;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #4caf50;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  padding: 12px 25px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #45a049;
+}
+
+/* Analysis Card */
+.analysis-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.1);
+  text-align: center;
+}
+
+.analyse-btn {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.analyse-btn:hover {
+  transform: translateY(-2px);
+}
+
+.analysis-result {
+  background: #f0f7f0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #4caf50;
+}
+
+/* Footer */
+.footer {
+  background: #2d5a2d;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .page-content {
+    padding: 20px;
+  }
+}

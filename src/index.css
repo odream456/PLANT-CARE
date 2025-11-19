@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23379963' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-scan {
+  animation: scan 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
